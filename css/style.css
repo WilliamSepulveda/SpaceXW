@@ -60,3 +60,21 @@ body{
 .mGS2SGGridSection{
     border: 1px solid pink;
 }
+.continformation{
+    display: grid;
+    background: red;
+    grid-template-columns: 20%  80%;
+}
+.conttexto{
+    border: 1px solid black;
+}
+.conttexto h1{
+    font-size: 15px;
+    font-family: "roboto-mono";
+    color: white;
+    margin-top: 15px;
+}
+.conttexto h2{
+    color: white;
+    font-size: 30px;
+}

@@ -1,3 +1,8 @@
 :root{
     --color-1: #1e243e;
 }
+
+@font-face {
+    font-family: "roboto-mono";
+    src: url(../storage/fonts/roboto/RobotoMono-VariableFont_wght.ttf);
+}
