@@ -62,19 +62,26 @@ body{
 }
 .continformation{
     display: grid;
-    background: red;
-    grid-template-columns: 20%  80%;
+    /* background: red; */
+    grid-template-columns: 10%  90%;
 }
 .conttexto{
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .conttexto h1{
-    font-size: 15px;
+    font-size: 12px;
     font-family: "roboto-mono";
     color: white;
-    margin-top: 15px;
+    margin-top: 25px;
+    margin-left: 5px;
 }
 .conttexto h2{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-family: "lato-bold";
+}
+.conttexto img{
+    margin-top: 15px;
 }
