@@ -47,7 +47,7 @@ export const displayRockets = async()=>{
                     </div>
                     <div class="conttexto">
                         <h2>Read more about the coete</h2>
-                        <h1>${wilki}</h1>
+                        <a href="${wilki}">Wikipedia</a>
                     </div>
                 </div>
     `;
