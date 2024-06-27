@@ -54,3 +54,16 @@ export const displayRockets = async()=>{
     
     contenedor.innerHTML= plantilla;
 }
+export const titleRockets = async()=>{
+    let contenedor = document.querySelector("#title")
+    let rockets = await getAllRockets();
+    let rocket = rockets[0];
+
+    let namme = rocket.name;
+    let plantilla = `
+     <div class="contTitle">
+                <h1>${namme}</h1>
+            </div>
+    `;
+    contenedor.innerHTML = plantilla;
+}

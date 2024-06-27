@@ -85,3 +85,14 @@ body{
 .conttexto img{
     margin-top: 15px;
 }
+.contTitle{
+    display: flex;
+    /* background: red; */
+    justify-content: center;
+    text-align: center;
+}
+.contTitle h1{
+    color: white;
+    font-size: 60px;
+    font-family: "roboto-mono"
+}
