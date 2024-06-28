@@ -112,6 +112,54 @@ export const informationRocket = async()=>{
                         </div>
                     </div>  
                 </div>
+                
+    `;
+    contenedor.innerHTML = plantilla;
+}
+
+export const informationRocket2 = async()=>{
+    let contenedor = document.querySelector("#informationR2")
+    let rockets = await getAllRockets();
+    let rocket = rockets[0];
+
+    let typeVersion = rocket.engines.type;
+    let loss_power =rocket.engines.engine_loss_max;
+    let disposicion = rocket.engines.number;
+    let propulsor = rocket.engines.propellant_1;
+    let propulsor2 = rocket.engines.propellant_2;
+    let layout = rocket.engines.layout;
+    
+
+    let plantilla =`
+        <div class="cont_espera">
+                    <h1></h1>
+                </div>  
+                <div class="content_information">
+                    <div class="titlecontent_information">
+                        <h1>ENGINE INFORMATION<br>••••••••••••••••••••••••••••</h1> 
+                    </div>
+                    <div class="contenido2">
+                        <div class="contenido_hijo">
+                        <p>Type</p>
+                        <p>Maximum power loss</p>
+                        <p>Engine availability</p>
+                        <p>Number of engines</p>
+                        <p>Stage 1 fuel</p>
+                        <p>.</p>
+                        <p>Stage 2 fuel</p>
+                        </div>
+                        <div class="contenido_hijo2">
+                            <p>${typeVersion}</p>
+                            <p>${loss_power}</p>    
+                            <p>${layout}</p>
+                            <p>${disposicion}</p>
+                            <p>${propulsor}</p>
+                            
+                            <p>${propulsor2}</p>
+                        </div>
+                    </div>  
+                </div>
+                
     `;
     contenedor.innerHTML = plantilla;
 }
