@@ -260,7 +260,7 @@ body::-webkit-scrollbar-thumb{
 }
 .Data_son{
     display: flex;
-    background: blue;
+    /* background: blue; */
     width: 100%;
     margin-top: 15px;
 }
@@ -270,10 +270,40 @@ body::-webkit-scrollbar-thumb{
     margin-left: 3px;
 }
 .Data_nieto{
-    background: rgb(45, 45, 43);
+    background: rgba(52, 36, 80, 0.46);
     width:60%;
+    height: 60px;
 }
 .Data_nieto2{
-    background: rgb(0, 213, 255);
+    background: rgba(69, 40, 84, 0.46);
     width: 40%;
 } 
+.containerbarra{
+    margin-top: 15px;
+   position: relative;
+   width: 200px;
+   /* background: red; */
+   padding: 20 0px;
+   border-radius: 5px;
+   margin-left: 5px;
+   border-radius: 10px;
+}
+.containerbarra .progress{
+    margin-top: 5px;
+    background: rgba(62, 69, 61, 0.71);
+    width: 100%;
+    height: 5px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 5 0px;
+}
+
+.containerbarra .progress::before{
+    content: " ";
+    position: absolute;
+    width: var(--wth,);
+    height: 100%;
+    background: rgb(0, 213, 255);
+    border-radius: 10px;
+
+}

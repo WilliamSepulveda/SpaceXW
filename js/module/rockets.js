@@ -91,7 +91,7 @@ export const informationRocket = async()=>{
                 </div>  
                 <div class="content_information">
                     <div class="titlecontent_information">
-                        <h1>INFORMATION ROCKET<br>••••••••••••••••••••••••••••</h1> 
+                        <h1>INFORMATION ROCKET<br>••••••••••••••••••••••••••••••••••</h1> 
                     </div>
                     <div class="contenido">
                         <div class="contenido_hijo">
@@ -136,7 +136,7 @@ export const informationRocket2 = async()=>{
                 </div>  
                 <div class="content_information">
                     <div class="titlecontent_information">
-                        <h1>ENGINE INFORMATION<br>••••••••••••••••••••••••••••</h1> 
+                        <h1>ENGINE INFORMATION<br>••••••••••••••••••••••••••••••••••••</h1> 
                     </div>
                     <div class="contenido2">
                         <div class="contenido_hijo">
@@ -145,7 +145,6 @@ export const informationRocket2 = async()=>{
                         <p>Engine availability</p>
                         <p>Number of engines</p>
                         <p>Stage 1 fuel</p>
-                        <p>.</p>
                         <p>Stage 2 fuel</p>
                         </div>
                         <div class="contenido_hijo2">
@@ -171,13 +170,29 @@ export const dataRockets = async()=>{
 
     let masa = rocket.mass.kg;
     let masaLb = rocket.mass.lb;
+    let thrustSecondStage = rocket.payload_weights[0].kg;
+    let thrustSecondStageLb =rocket.payload_weights[0].lb;
+    let metersM = rocket.height.meters;
+    let meterssF = rocket.height.feet;
+    // console.log(rocket.second_stage.payloads.composite_fairing.diameter.meters)
+    let diametro =rocket.second_stage.payloads.composite_fairing.diameter.meters;
+    let diametroF = rocket.second_stage.payloads.composite_fairing.diameter.feet;
+    let diametro1 =rocket.second_stage.payloads.composite_fairing.height.meters;
+    let diametro1F = rocket.second_stage.payloads.composite_fairing.height.feet;
+    let masaKg = rocket.mass.kg;
+    let maxWeight = 90000;
+    let porcentaje = (masaKg / maxWeight) * 100;
+
 
     let plantilla =`
     <div class="Data_dad">
                     <div class="Data_son">
                         <div class="Data_nieto">
                             <p>Rocket weight </p>
-                            <p>barra</p>
+                               <div class="containerbarra">
+                                <div class="progress" style="--wth:${porcentaje}%">
+                                </div>
+                            </div>
 
                         </div>
                         <div class="Data_nieto2">
@@ -189,16 +204,89 @@ export const dataRockets = async()=>{
                  <div class="Data_dad">
                     <div class="Data_son">
                         <div class="Data_nieto">
-                            <p>Rocket weight </p>
-                            <p>barra</p>
+                            <p>Low Earth Orbit : </p>
+                               <div class="containerbarra">
+                                <div class="barraFunction">
+                                    <div class="progress" style="--wth:${porcentaje}%"></div>
+                                </div>
+                            </div>
 
                         </div>
                         <div class="Data_nieto2">
-                            <p>${masa} Kg</p>
-                             <p>${masaLb} Lb</p>
+                            <p>${thrustSecondStage} Kg</p>
+                             <p>${thrustSecondStageLb} Lb</p>
                         </div>
                     </div>
                 </div>
+                   <div class="Data_dad">
+                    <div class="Data_son">
+                        <div class="Data_nieto">
+                            <p>Rocket Height :</p>
+                               <div class="containerbarra">
+                               <div class="barraFunction">
+                                    <div class="progress" style="--wth:${porcentaje}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Data_nieto2">
+                            <p>${metersM} M</p>
+                             <p>${meterssF} F</p>
+                        </div>
+                    </div>
+                </div>
+                   <div class="Data_dad">
+                    <div class="Data_son">
+                        <div class="Data_nieto">
+                            <p>Rocket diameter :</p>
+                               <div class="containerbarra">
+                                <div class="barraFunction">
+                                    <div class="progress" style="--wth:${porcentaje}%"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="Data_nieto2">
+                            <p>${diametro} M</p>
+                             <p>${diametroF} F</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="Data_dad">
+                    <div class="Data_son">
+                        <div class="Data_nieto">
+                            <p>Diameter rocket shield:</p>
+                               <div class="containerbarra">
+                               <div class="barraFunction">
+                                    <div class="progress" style="--wth:${porcentaje}%"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="Data_nieto2">
+                            <p>${diametro} M</p>
+                             <p>${diametroF} F</p>
+                        </div>
+                    </div>
+                </div>
+                  </div>
+                  <div class="Data_dad">
+                    <div class="Data_son">
+                        <div class="Data_nieto">
+                            <p>Height rocket shield:</p>
+                               <div class="containerbarra">
+                                <div class="barraFunction">
+                                    <div class="progress" style="--wth:${porcentaje}%"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="Data_nieto2">
+                            <p>${diametro1} M</p>
+                             <p>${diametro1F} F</p>
+                        </div>
+                    </div>
+                </div>
+
     
     `;
     contenedor.innerHTML = plantilla;
