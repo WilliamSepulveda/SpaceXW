@@ -9,6 +9,7 @@
 body{
     height: 100vh;
     background-color: var(--color-1);
+    overflow: hidden;
 }
 body::-webkit-scrollbar{
     width: 8px;
@@ -25,7 +26,7 @@ body::-webkit-scrollbar-thumb{
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 15% 67% 22%;
+    grid-template-columns: 16% 67% 19%;
     grid-template-rows: 1;
 }
 
@@ -254,3 +255,25 @@ body::-webkit-scrollbar-thumb{
     font-size: 60px;
     font-family: "roboto-mono"
 }
+.Data_dad{
+    display: flex;
+}
+.Data_son{
+    display: flex;
+    background: blue;
+    width: 100%;
+    margin-top: 15px;
+}
+.Data_son p{
+    color:white;
+    font-family: "roboto-mono";
+    margin-left: 3px;
+}
+.Data_nieto{
+    background: rgb(45, 45, 43);
+    width:60%;
+}
+.Data_nieto2{
+    background: rgb(0, 213, 255);
+    width: 40%;
+} 

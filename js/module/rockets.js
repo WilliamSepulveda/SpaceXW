@@ -163,3 +163,43 @@ export const informationRocket2 = async()=>{
     `;
     contenedor.innerHTML = plantilla;
 }
+
+export const dataRockets = async()=>{
+    let contenedor = document.querySelector("#contData")
+    let rockets = await getAllRockets();
+    let rocket = rockets[0];
+
+    let masa = rocket.mass.kg;
+    let masaLb = rocket.mass.lb;
+
+    let plantilla =`
+    <div class="Data_dad">
+                    <div class="Data_son">
+                        <div class="Data_nieto">
+                            <p>Rocket weight </p>
+                            <p>barra</p>
+
+                        </div>
+                        <div class="Data_nieto2">
+                            <p>${masa} Kg</p>
+                             <p>${masaLb} Lb</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="Data_dad">
+                    <div class="Data_son">
+                        <div class="Data_nieto">
+                            <p>Rocket weight </p>
+                            <p>barra</p>
+
+                        </div>
+                        <div class="Data_nieto2">
+                            <p>${masa} Kg</p>
+                             <p>${masaLb} Lb</p>
+                        </div>
+                    </div>
+                </div>
+    
+    `;
+    contenedor.innerHTML = plantilla;
+}
