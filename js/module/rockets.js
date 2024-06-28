@@ -1,7 +1,11 @@
 import {getAllRockets}from "./app.js"
 
 export const displayRockets = async()=>{
-    let contenedor = document.querySelector("#contsection1")
+    let contenedor = document.querySelector("#contsection1");
+    let contenedor2 = document.querySelector("#informationR");
+    let contenedor3 = document.querySelector("#title");
+    let contenedor4 = document.querySelector("#informationR2");
+    let contenedor5 = document.querySelector("#contData");
     let rockets = await getAllRockets();
     let rocket = rockets[0];
 
@@ -10,7 +14,6 @@ export const displayRockets = async()=>{
     let price = rocket.cost_per_launch;
     let fecha =rocket.first_flight;
     let wilki = rocket.wikipedia;
-    
     let plantilla = `
     <div class="continformation">
                     <div class="conttexto">
@@ -51,28 +54,9 @@ export const displayRockets = async()=>{
                     </div>
                 </div>
     `;
-    
     contenedor.innerHTML= plantilla;
-}
-export const titleRockets = async()=>{
-    let contenedor = document.querySelector("#title")
-    let rockets = await getAllRockets();
-    let rocket = rockets[0];
-
-    let namme = rocket.name;
-    let plantilla = `
-     <div class="contTitle">
-                <h1>${namme}</h1>
-            </div>
-    `;
-    contenedor.innerHTML = plantilla;
-}
 
 
-export const informationRocket = async()=>{
-    let contenedor = document.querySelector("#informationR")
-    let rockets = await getAllRockets();
-    let rocket = rockets[0];
 
     let typeRocket = rocket.type;
     let etapa = rocket.stages;
@@ -85,13 +69,13 @@ export const informationRocket = async()=>{
     } else {
         material = '';
     }
-    let plantilla =`
+    let plantilla2 =`
         <div class="cont_espera">
                     <h1></h1>
                 </div>  
                 <div class="content_information">
                     <div class="titlecontent_information">
-                        <h1>INFORMATION ROCKET<br>••••••••••••••••••••••••••••••••••</h1> 
+                        <h1>INFORMATION ROCKET<br>••••••••••••••••</h1> 
                     </div>
                     <div class="contenido">
                         <div class="contenido_hijo">
@@ -114,13 +98,16 @@ export const informationRocket = async()=>{
                 </div>
                 
     `;
-    contenedor.innerHTML = plantilla;
-}
+    contenedor2.innerHTML = plantilla2;
 
-export const informationRocket2 = async()=>{
-    let contenedor = document.querySelector("#informationR2")
-    let rockets = await getAllRockets();
-    let rocket = rockets[0];
+
+    let namme1 = rocket.name;
+    let plantilla3 = `
+     <div class="contTitle">
+                <h1>${namme1}</h1>
+            </div>
+    `;
+    contenedor3.innerHTML = plantilla3;
 
     let typeVersion = rocket.engines.type;
     let loss_power =rocket.engines.engine_loss_max;
@@ -129,14 +116,13 @@ export const informationRocket2 = async()=>{
     let propulsor2 = rocket.engines.propellant_2;
     let layout = rocket.engines.layout;
     
-
-    let plantilla =`
+    let plantilla4 =`
         <div class="cont_espera">
                     <h1></h1>
                 </div>  
                 <div class="content_information">
                     <div class="titlecontent_information">
-                        <h1>ENGINE INFORMATION<br>••••••••••••••••••••••••••••••••••••</h1> 
+                        <h1>ENGINE INFORMATION<br>•••••••••••••••••••</h1> 
                     </div>
                     <div class="contenido2">
                         <div class="contenido_hijo">
@@ -160,14 +146,7 @@ export const informationRocket2 = async()=>{
                 </div>
                 
     `;
-    contenedor.innerHTML = plantilla;
-}
-
-export const dataRockets = async()=>{
-    let contenedor = document.querySelector("#contData")
-    let rockets = await getAllRockets();
-    let rocket = rockets[0];
-
+    contenedor4.innerHTML = plantilla4;
     let masa = rocket.mass.kg;
     let masaLb = rocket.mass.lb;
     let thrustSecondStage = rocket.payload_weights[0].kg;
@@ -182,9 +161,7 @@ export const dataRockets = async()=>{
     let masaKg = rocket.mass.kg;
     let maxWeight = 90000;
     let porcentaje = (masaKg / maxWeight) * 100;
-
-
-    let plantilla =`
+    let plantilla5 =`
     <div class="Data_dad">
                     <div class="Data_son">
                         <div class="Data_nieto">
@@ -289,5 +266,9 @@ export const dataRockets = async()=>{
 
     
     `;
-    contenedor.innerHTML = plantilla;
+    contenedor5.innerHTML = plantilla5;
+
+
 }
+
+  

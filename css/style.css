@@ -84,6 +84,8 @@ body::-webkit-scrollbar-thumb{
     background: rgba(43, 66, 100, 0.348);
     width: 66.5vw;
     height: 13vh;
+    justify-content: center;
+    gap: 50px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
@@ -291,7 +293,7 @@ body::-webkit-scrollbar-thumb{
 .containerbarra .progress{
     margin-top: 5px;
     background: rgba(62, 69, 61, 0.71);
-    width: 100%;
+    width: 80%;
     height: 5px;
     border-radius: 6px;
     overflow: hidden;
@@ -306,4 +308,21 @@ body::-webkit-scrollbar-thumb{
     background: rgb(0, 213, 255);
     border-radius: 10px;
 
+}
+
+.contenedorimg_dad{
+    display: grid;
+    background: violet;
+    height: 390px;
+}
+.contenedorimg_son{
+    display: flex;
+    background: red;
+    overflow-x: scroll;
+    height: 50%;
+    margin-top: 25%;
+}
+
+.contenedorimg_son img{
+    width: 100%;
 }
