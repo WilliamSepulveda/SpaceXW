@@ -286,9 +286,9 @@ export const displayRockets = async()=>{
     let porcentajeH = rocket.engines.thrust_sea_level.lbf;
     let porcentajeD1 = rocket.engines.thrust_vacuum.kN;
     let porcentajeH1 = rocket.engines.thrust_vacuum.lbf;
-    let topspeed = rocket.engines.thrust_sea_level.lbf;
-    let maxspeed = 20000;
-    let velocidad = (maxspeed / topspeed) * 100;
+    const maxspeed = 500000;
+    const topspeed = rocket.engines.thrust_sea_level.lbf;
+    const velocidad = (topspeed / maxspeed) * 100;
      let plantilla7 = `
      <div class="container">
                     <div class="progress" style="--i:${velocidad};--clr:#50f30a;">
