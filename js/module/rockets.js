@@ -6,6 +6,9 @@ export const displayRockets = async()=>{
     let contenedor3 = document.querySelector("#title");
     let contenedor4 = document.querySelector("#informationR2");
     let contenedor5 = document.querySelector("#contData");
+    let contenedor6 = document.querySelector("#contenedorImagenes");
+    let contenedor7 = document.querySelector("#diagramas")
+
     let rockets = await getAllRockets();
     let rocket = rockets[0];
 
@@ -268,7 +271,37 @@ export const displayRockets = async()=>{
     `;
     contenedor5.innerHTML = plantilla5;
 
+    let plantilla6 = ``;
+    let images = rocket.flickr_images;
 
+    if (images[0]){
+        for (let i = 0; i < images.length; i++){
+            plantilla6 += `<img referrerpolicy="no-referrer" src="${images[i]}"></img>`;
+        }
+    }
+
+    contenedor6.innerHTML = plantilla6;
+
+    let porcentajeD = rocket.engines.thrust_sea_level.kN;
+    let porcentajeH = rocket.engines.thrust_sea_level.lbf;
+    let porcentajeD1 = rocket.engines.thrust_vacuum.kN;
+    let porcentajeH1 = rocket.engines.thrust_vacuum.lbf;
+    let topspeed = rocket.engines.thrust_sea_level.lbf;
+    let maxspeed = 20000;
+    let velocidad = (maxspeed / topspeed) * 100;
+     let plantilla7 = `
+     <div class="container">
+                    <div class="progress" style="--i:${velocidad};--clr:#50f30a;">
+                        <h3>Atmospheric acceleration<span>%</span></h3>
+                        <h4>${porcentajeD}KN</h4>
+                        <h2>${porcentajeH}lbf</h2>
+                    </div>
+                    <div class="progress less" style="--i:${velocidad};--clr:#0ac4f3;">
+                        <h3>Speed inspace<span>%</span></h3>
+                        <h4>${porcentajeD1}KN</h4>
+                        <h2>${porcentajeH1}lbf</h2>
+                    </div>
+                </div>
+    `;
+    contenedor7.innerHTML = plantilla7;
 }
-
-  
