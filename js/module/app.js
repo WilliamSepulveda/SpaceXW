@@ -41,3 +41,15 @@ export const getmasatotalRockets = async()=>{
     console.log(mass)
     return mass;
 }
+
+
+export const getAllCapsules = async() =>{
+    const url = ("https://api.spacexdata.com/v4/capsules");
+const options = {
+    method: 'GET'
+};
+
+let data = await fetch(url, options);
+let res = data.json();
+return res;
+}
