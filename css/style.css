@@ -212,7 +212,7 @@ body::-webkit-scrollbar-thumb{
     background-size: 200% 100%;
     background-position: 100% 0;
     animation: load 2s infinite;
-    width: 100%;
+    width: 325px;
     margin: 12px 0;
     height: 30%;
 }
@@ -223,8 +223,9 @@ body::-webkit-scrollbar-thumb{
 }
 .cont_espera img{
     position: absolute;
-    width:  340px;
-    height: 120px;    
+    width:  326px;
+    height: 120px;
+    filter:grayscale(yellow);
 }
 .content_information{
     display: flex;
@@ -341,12 +342,20 @@ body::-webkit-scrollbar-thumb{
     font-size: 60px;
     font-family: "roboto-mono"
 }
+.contenedorData{
+    display: flex;
+    position: relative;
+    background: rgb(4, 255, 50);
+    overflow-y: scroll;
+    height: 50%;
+}
 .Data_dad{
     display: flex;
+    
 }
 .Data_son{
+    position: relative;
     display: flex;
-    /* background: blue; */
     width: 100%;
     margin-top: 15px;
 }
@@ -445,5 +454,38 @@ body::-webkit-scrollbar-thumb{
     color: white;
 }
 
+#navigationNumbersCenter{
+    display: flex;
+    justify-content: center;
+}
+.navigationNumbersDiv{
+    display: flex;
+    overflow-x: auto;
+    width: 18vw;
+    height: 14vh;
+}
+.navigationNumbersGrid{
+    display: flex;
+    grid-auto-flow: column;
+    width: 100%;    
+    gap: 30px;
+    margin-top: 32px;
+    margin-left: 12px;
+}
+.navigationNumber{
+    width: 30px;
+    height: 30px;
+    background: rgb(123, 218, 7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: "roboto-mono";
+}
+.navigationNumber:hover{
+    background-color: var(--color-4);
+    border-radius: 50%;
+}
 
 

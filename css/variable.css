@@ -1,5 +1,10 @@
 :root{
     background-image: url('../storage/image/saturn-7322056_1280.jpg');
+    
+    --color-0: #f9e402;
+    --color-2: #00eeff;
+    --color-4: #f0d20e;
+   
 }
 
 @font-face {
@@ -11,3 +16,4 @@
     font-family: "lato-bold";
     src: url(../storage/fonts/Bold/Lato-Bold.ttf);
 }
+
