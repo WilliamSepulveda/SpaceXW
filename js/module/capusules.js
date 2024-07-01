@@ -1,14 +1,13 @@
 import { getAllCapsules } from "./app.js";
 
-// Función para crear el menú de cápsulas
+
 export const Capsulesmenu = async () => {
     let contenedor3 = document.querySelector(".navigationNumbersGrid");
     contenedor3.innerHTML = "";
     let capsules = await getAllCapsules();
-    let number = 1;  // Comienza en 1 para mostrar números de 1 a n
+    let number = 1; // Cambiado a 1 para empezar desde 1
 
     let cont = capsules.length;
-
     for (let i = 0; i < cont; i++) {
         let plantilla3 = `
             <div id="capsule-${i}" class="navigationNumber" data-index="${i}">
@@ -18,8 +17,6 @@ export const Capsulesmenu = async () => {
         contenedor3.innerHTML += plantilla3;
         number++;
     }
-
-    // Añadir event listeners a los botones de navegación
     document.querySelectorAll(".navigationNumber").forEach(element => {
         element.addEventListener("click", function () {
             let index = this.getAttribute("data-index");
@@ -32,10 +29,8 @@ function setMenuCapsule(index) {
     capsulesmaquetacion(index);
 }
 
-// Llama a la función para crear el menú de cápsulas al cargar la página
 Capsulesmenu();
 
-// Función para mostrar la información de la cápsula seleccionada
 export const capsulesmaquetacion = async (index = 0) => {
     let capsules = await getAllCapsules();
     let capsule = capsules[index];
