@@ -459,27 +459,33 @@ body::-webkit-scrollbar-thumb{
     color: white;
 }
 
-#navigationNumbersCenter{
+#navigationNumbersCenter {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
-.navigationNumbersDiv{
+
+.navigationNumbersDiv {
     display: flex;
-    overflow-x: auto;
     width: 18vw;
     height: 14vh;
 }
-.navigationNumbersGrid{
-    display: flex;
-    grid-auto-flow: column;
-    width: 100%;    
-    gap: 30px;
+
+.navigationNumbersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20px);
+    grid-auto-rows: 20px;
+    gap: 8px;
+    width: 100%;
     margin-top: 32px;
-    margin-left: 12px;
+    /* background: red; */
+    padding: 10px;
+    overflow: auto;
 }
-.navigationNumber{
-    width: 30px;
-    height: 30px;
+
+.navigationNumber {
+    width: 25px;
+    height: 25px;
     background: rgb(123, 218, 7);
     border-radius: 50%;
     display: flex;
@@ -487,11 +493,13 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     color: #ffffff;
     font-family: "roboto-mono";
-    
 }
-.navigationNumber:hover{
+
+.navigationNumber:hover {
     background-color: var(--color-4);
     border-radius: 50%;
 }
+
+
 
 
