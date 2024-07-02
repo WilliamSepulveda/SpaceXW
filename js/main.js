@@ -3,6 +3,7 @@ import { capsulesmaquetacion } from "./module/capusules.js";
 import { Capsulesmenu } from "./module/capusules.js";
 import { crewsmaquetacion } from "./module/crews.js";
 import { launchesmaquetacion } from "./module/launches.js";
+import { Dragonsmaquetacion } from "./module/dragons.js";
 
 Capsulesmenu();
 (async () => {
@@ -39,3 +40,9 @@ const launches = async () => {
     
 };
 document.launches = launches;
+
+const dragons = async () => {
+    await Dragonsmaquetacion();
+    alert("estas dentro men ")
+};
+document.dragons = dragons;

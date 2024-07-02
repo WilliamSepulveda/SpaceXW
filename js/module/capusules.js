@@ -160,7 +160,7 @@ export const capsulesmaquetacion = async (index = 0) => {
                         <span>Launches</span>
                     </a>
                 </li>
-                <li id="rocket">
+                <li id="rocket" onclick="dragons()">
                     <a class="select" href="#">
                         <img src="storage/image/dragon_5169265.png">
                         <span>Dragons</span>

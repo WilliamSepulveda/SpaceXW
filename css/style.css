@@ -321,7 +321,7 @@ body::-webkit-scrollbar-thumb{
 .conttexto h1{
     font-size: 12px;
     font-family: "roboto-mono";
-    color: white;
+    color: rgb(244, 180, 4);
     margin-top: 25px;
     margin-left: 5px;
 }
@@ -446,6 +446,7 @@ body::-webkit-scrollbar-thumb{
     margin-top: 15px;
     margin-left: 15px;
 }
+
 .contimage img{ 
     width: 60px;
 }
@@ -453,6 +454,9 @@ body::-webkit-scrollbar-thumb{
     font-size: 40px;
     color: white;
     font-family: "roboto-mono";
+}
+#dragon{
+    filter: invert();
 }
 .contDescription{
     display: flex;
