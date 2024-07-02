@@ -1,39 +1,9 @@
-// main.js
+import { getLaunches } from "./app.js";
 
-import { getAllCapsules } from "./app.js";
-import { equipo } from "./app.js";
 
-export const Capsulesmenu = async () => {
-    let contenedor3 = document.querySelector(".navigationNumbersGrid");
-    contenedor3.innerHTML = "";
-    let capsules = await getAllCapsules();
-    let number = 1; // Cambiado a 1 para empezar desde 1
-
-    capsules.forEach((capsule, index) => {
-        let plantilla3 = `
-            <div id="capsule-${index}" class="navigationNumber" data-index="${index}">
-                ${number}
-            </div>`;
-        
-        contenedor3.innerHTML += plantilla3;
-        number++;
-    });
-
-    document.querySelectorAll(".navigationNumber").forEach(element => {
-        element.addEventListener("click", function () {
-            let index = this.getAttribute("data-index");
-            setMenuCapsule(index);
-        });
-    });
-};
-
-function setMenuCapsule(index) {
-    crewsmaquetacion(index);
-}
-
-export const crewsmaquetacion = async (index = 0) => {
-    let crews = await equipo(); 
-    let crew = crews[index]; // Obtener la tripulación según el índice seleccionado
+export const launchesmaquetacion = async () => {
+    let crews = await getLaunches(); 
+    let crew = crews[0]; 
 
     let contenedor1 = document.querySelector("#mGS1");
     let contenedor2 = document.querySelector("#mGS2");
@@ -43,14 +13,6 @@ export const crewsmaquetacion = async (index = 0) => {
     contenedor2.innerHTML = "";
     contenedor3.innerHTML = "";
 
-    let launches = crew.launches;
-    let launchCount = launches.length;
-    let launchText = launchCount === 1 ? "1 resultado" : `${launchCount} resultados`;
-
-    let name = crew.name;
-    let Agency = crew.agency;
-    let image = crew.image;
-    let wikipedia = crew.wikipedia;
 
     let plantilla1 = `
         <div class="mGS1Section">
@@ -63,7 +25,7 @@ export const crewsmaquetacion = async (index = 0) => {
                         <img src="storage/image/mech.svg" alt="">
                     </div>
                     <div id="launch" class="conttexto">
-                        <h1>LAUNCH: #${launchText}</h1>
+                        <h1>LAUNCH: #</h1>
                     </div>
                 </div>
             </div>
@@ -74,17 +36,17 @@ export const crewsmaquetacion = async (index = 0) => {
     let plantilla2 = `
         <div class="mGS2Section">
             <div id="title" class="contTitle">
-                <h1>${name}</h1>
+                <h1></h1>
             </div>
             <div id="diagramas" class="mGS2Section">
                 <div class="container">
                     <div class="progress" style="--i:85;--clr:#50f30a;">
                         <h3>Launches<span>%</span></h3>
-                        <h4>${launchText}</h4>
+                        <h4>$</h4>
                     </div>
                     <div class="progress less" style="--i:62;--clr:#0ac4f3;">
                         <h3>Status<span>%</span></h3>
-                        <h4>${crew.status}</h4>
+                        <h4></h4>
                     </div>
                 </div>
             </div>
@@ -105,9 +67,9 @@ export const crewsmaquetacion = async (index = 0) => {
                                     <p>Wikipedia</p>
                                 </div>
                                 <div class="contenido_hijo2">
-                                    <p>${name}<br></p>
-                                    <p>${Agency}</p>
-                                    <a href="${wikipedia}" target="_blank">Open</a>
+                                    <p><br></p>
+                                    <p></p>
+                                    <a href="" target="_blank">Open</a>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +78,7 @@ export const crewsmaquetacion = async (index = 0) => {
                 <div class="mGS2SGGridSection">
                     <div class="contenedorimg_dad">
                         <div id="contenedorImagenes" class="contenedorimg_son">
-                            <img referrerpolicy="no-referrer" src="${image}"></img>
+                            <img referrerpolicy="no-referrer" src=""></img>
                         </div>
                     </div>
                 </div>
@@ -142,7 +104,7 @@ export const crewsmaquetacion = async (index = 0) => {
                                 <span>Crews</span>
                     </a>
                 </li>
-                <li id="rocket" onclick="launches()>
+                <li id="rocket">
                     <a class="select" href="#">
                         <img src="storage/image/spaceship-26556_1280.png">
                         <span>Launches</span>
@@ -176,17 +138,5 @@ export const crewsmaquetacion = async (index = 0) => {
 
     contenedor3.innerHTML = plantilla3;
 
-    let navigationNumbersGrid = contenedor3.querySelector(".navigationNumbersGrid");
-    navigationNumbersGrid.innerHTML = ""; // Limpiar antes de agregar
-
-    // Generar botones de navegación para cada miembro de la tripulación
-    crews.forEach((crew, idx) => {
-        let button = document.createElement("div");
-        button.classList.add("navigationNumber");
-        button.textContent = `${idx + 1}`;
-        button.addEventListener("click", () => {
-            crewsmaquetacion(idx); // Mostrar detalles del índice seleccionado
-        });
-        navigationNumbersGrid.appendChild(button);
-    });
+    
 };
