@@ -192,6 +192,7 @@ body::-webkit-scrollbar-thumb{
     margin-left: 22px;
     margin-top: 15px;
 }
+
 #mGS2SGrid{
     display: grid;
     grid-template-rows: 1;

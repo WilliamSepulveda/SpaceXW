@@ -75,3 +75,15 @@ let data = await fetch(url, options);
 let res = data.json();
 return res;
 }
+
+
+
+export const equipo = async () => {
+    const url = "https://api.spacexdata.com/v4/crew";
+    const options = {
+        method: 'GET'
+    };
+    let data = await fetch(url, options);
+    let res = await data.json(); 
+    return res;
+};

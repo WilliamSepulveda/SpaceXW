@@ -1,22 +1,21 @@
 import { getAllCapsules } from "./app.js";
 
-
 export const Capsulesmenu = async () => {
     let contenedor3 = document.querySelector(".navigationNumbersGrid");
     contenedor3.innerHTML = "";
     let capsules = await getAllCapsules();
     let number = 1; // Cambiado a 1 para empezar desde 1
 
-    let cont = capsules.length;
-    for (let i = 0; i < cont; i++) {
+    capsules.forEach((capsule, index) => {
         let plantilla3 = `
-            <div id="capsule-${i}" class="navigationNumber" data-index="${i}">
+            <div id="capsule-${index}" class="navigationNumber" data-index="${index}">
                 ${number}
             </div>`;
         
         contenedor3.innerHTML += plantilla3;
         number++;
-    }
+    });
+
     document.querySelectorAll(".navigationNumber").forEach(element => {
         element.addEventListener("click", function () {
             let index = this.getAttribute("data-index");
@@ -28,8 +27,6 @@ export const Capsulesmenu = async () => {
 function setMenuCapsule(index) {
     capsulesmaquetacion(index);
 }
-
-Capsulesmenu();
 
 export const capsulesmaquetacion = async (index = 0) => {
     let capsules = await getAllCapsules();
@@ -137,7 +134,7 @@ export const capsulesmaquetacion = async (index = 0) => {
     <div class="mGS2Section">
         <div class="footer_dad">
             <div class="footer_son">
-                <li id="rocket">
+                <li id="rocket" onclick="rockets()">
                     <a class="select" href="#">
                         <img src="storage/image/cohete.png">
                         <span>Rockets</span>
@@ -149,7 +146,7 @@ export const capsulesmaquetacion = async (index = 0) => {
                         <span>Capsules</span>
                     </a>
                 </li>
-                <li id="rocket">
+                <li id="rocket" onclick="crews()">
                     <a class="select" href="#">
                         <img src="storage/image/tripulacion.png">
                         <span>Crews</span>
@@ -194,6 +191,3 @@ export const capsulesmaquetacion = async (index = 0) => {
         });
     });
 };
-
-// Inicializa mostrando la primera cápsula por defecto
-capsulesmaquetacion();
