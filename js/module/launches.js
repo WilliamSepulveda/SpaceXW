@@ -190,8 +190,8 @@ export const launchesmaquetacion = async (index = 0) => {
             </li>
             <li id="rocket">
                 <a class="select" href="#">
-                    <img src="storage/image/almuerzo-cohete.svg">
-                    <span>Rockets</span>
+                    <img src="storage/image/dragon_5169265.png">
+                    <span>Dragons</span>
                 </a>
             </li>
         </div>
