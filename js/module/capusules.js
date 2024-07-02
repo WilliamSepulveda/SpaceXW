@@ -44,7 +44,7 @@ export const capsulesmaquetacion = async (index = 0) => {
     let reuse_count = capsule.reuse_count;
     let launches = capsule.launches;
     let launchCount = launches.length;
-    let launchText = launchCount === 1 ? "1 resultado" : `${launchCount} resultados`;
+    let launchText = launchCount === 1 ? "1 resultado" : `${launchCount} `;
 
     let water_landings = capsule.water_landings;
     let land_landings = capsule.land_landings;
@@ -105,7 +105,9 @@ export const capsulesmaquetacion = async (index = 0) => {
         </div>
         <div class="mGS2SGGridSection">
             <div class="contenedorimg_dad">
-                <div id="contenedorImagenes" class="contenedorimg_son"></div>
+                <div id="contenedorImagenes" class="contenedorimg_son">
+                <img src="storage/image/capsules1.jpg">
+                </div>
             </div>
         </div>
         <div id="informationR2" class="mGS2SGGridSection">
