@@ -1,9 +1,36 @@
 import { getLaunches } from "./app.js";
 
+export const Capsulesmenu = async () => {
+    let contenedor3 = document.querySelector(".navigationNumbersGrid");
+    contenedor3.innerHTML = "";
+    let capsules = await getLaunches();
+    let number = 1; 
 
-export const launchesmaquetacion = async () => {
+    capsules.forEach((capsule, index) => {
+        let plantilla3 = `
+            <div id="capsule-${index}" class="navigationNumber" data-index="${index}">
+                ${number}
+            </div>`;
+        
+        contenedor3.innerHTML += plantilla3;
+        number++;
+    });
+
+    document.querySelectorAll(".navigationNumber").forEach(element => {
+        element.addEventListener("click", function () {
+            let index = this.getAttribute("data-index");
+            setMenuCapsule(index);
+        });
+    });
+};
+
+function setMenuCapsule(index) {
+    launchesmaquetacion(index);
+}
+
+export const launchesmaquetacion = async (index = 0) => {
     let launches = await getLaunches(); 
-    let launch = launches[0]; 
+    let launch = launches[index]; 
 
     let contenedor1 = document.querySelector("#mGS1");
     let contenedor2 = document.querySelector("#mGS2");
@@ -12,15 +39,34 @@ export const launchesmaquetacion = async () => {
     contenedor1.innerHTML = "";
     contenedor2.innerHTML = "";
     contenedor3.innerHTML = "";
+    let nombre = launch.name || "NO ENCONTRADA";
+    let details = launch.details || "No details available";
 
-    let nombre = launch.name;
-    let details = launch.details;
-    let time = launch.failures[0].time;
-    let altura = launch.failures[0].altitude;
-    if (altura === null) {
-      altura = "No Encontrada";
+    const maxLength = 100;
+    if (details.length > maxLength) {
+        details = "Launch was scrubbed on first attempt, second launch attempt was successful";
     }
-    let reason = launch.failures[0].reason;
+
+    let time = "NO Encontrada";
+    let altura = "NO Encontrada";
+    let reason = "NO Encontrada";
+    let failures = launch.failures || [];
+    let failuresq = failures.length;
+    let fallas = failuresq === 1 ? "1 resultado" : `${failuresq} resultados`;
+
+    if (failuresq > 0) {
+        time = failures[0].time || "NO ENCONTRADA";
+        altura = failures[0].altitude || "NO ENCONTRADA";
+        if (altura === null) {
+            altura = "No Encontrada";
+        }
+        reason = failures[0].reason || "NO ENCONTRADA";
+    }
+
+    let vuelos = launch.cores && launch.cores[0] ? launch.cores[0].flight : "NO ENCONTRADA";
+    let image = launch.links.patch.small || "default_image_url";
+
+
     let plantilla1 = `
         <div class="mGS1Section">
             <div class="contDescription">
@@ -52,11 +98,11 @@ export const launchesmaquetacion = async () => {
         <div class="container">
             <div class="progress" style="--i:85;--clr:#50f30a;">
                 <h3>Total Failures<span>%</span></h3>
-                <h4></h4>
+                <h4>${fallas}</h4>
             </div>
             <div class="progress less" style="--i:62;--clr:#0ac4f3;">
-                <h3>Launch Rocket<span>%</span></h3>
-                <h4></h4>
+                <h3>flight<span>%</span></h3>
+                <h4>${vuelos}</h4>
             </div>
         </div>
     </div>
@@ -87,7 +133,7 @@ export const launchesmaquetacion = async () => {
         <div class="mGS2SGGridSection">
             <div class="contenedorimg_dad">
                 <div id="contenedorImagenes" class="contenedorimg_son">
-                <img src="storage/image/capsules1.jpg">
+                <img referrerpolicy="no-referrer" src="${image}"></img>
                 </div>
             </div>
         </div>
@@ -160,13 +206,26 @@ export const launchesmaquetacion = async () => {
                 <h3>Launches</h3>
             </div>
         </div>
-        <div id="paggines" class="mGS3Section"> 
-            <div class="navigationNumbersGrid">
-                <!-- Botones de navegación -->
+        <div class="navigationNumbersDiv">
+            <div class="navigationNumbersContainer">
+                <div class="navigationNumbersGrid">
+                    <!-- Botones de navegación -->
+                </div>
             </div>
         </div>`;
 
     contenedor3.innerHTML = plantilla3;
 
-    
+    let navigationNumbersGrid = contenedor3.querySelector(".navigationNumbersGrid");
+    navigationNumbersGrid.innerHTML = ""; 
+
+    launches.forEach((launch, idx) => {
+        let button = document.createElement("div");
+        button.classList.add("navigationNumber");
+        button.textContent = `${idx + 1}`;
+        button.addEventListener("click", () => {
+            launchesmaquetacion(idx); 
+        });
+        navigationNumbersGrid.appendChild(button);
+    });
 };

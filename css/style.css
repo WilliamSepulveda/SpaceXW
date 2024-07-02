@@ -479,27 +479,31 @@ body::-webkit-scrollbar-thumb{
 .navigationNumbersDiv {
     display: flex;
     width: 18vw;
-    height: 14vh;
+    height: 34vh;
+}
+
+.navigationNumbersContainer {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    /* background: red; */
 }
 
 .navigationNumbersGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 20px);
     grid-auto-rows: 20px;
-    gap: 8px;
+    gap: 25px;
     width: 100%;
     margin-top: 32px;
-    /* background: red; */
-    padding: 10px;
-    overflow: auto;
 }
 
 .navigationNumber {
-    width: 25px;
-    height: 25px;
+    display: grid;
+    width: 35px;
+    height: 35px;
     background: rgb(218, 120, 7);
     border-radius: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
@@ -510,6 +514,7 @@ body::-webkit-scrollbar-thumb{
     background-color: rgb(7, 218, 70);
     border-radius: 50%;
 }
+
 
 
 
