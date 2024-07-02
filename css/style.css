@@ -303,6 +303,10 @@ body::-webkit-scrollbar-thumb{
     color: white;
     font-family: "roboto-mono";
 }
+.contenido_hijo2 a{
+    color: #04f133;
+    font-family: "roboto-mono";
+}
 .continformation{
     display: grid;
     grid-template-columns: 10%  90%;

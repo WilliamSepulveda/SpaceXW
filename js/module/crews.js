@@ -142,7 +142,7 @@ export const crewsmaquetacion = async (index = 0) => {
                                 <span>Crews</span>
                     </a>
                 </li>
-                <li id="rocket" onclick="launches()>
+                <li id="rocket" onclick="launches()">
                     <a class="select" href="#">
                         <img src="storage/image/spaceship-26556_1280.png">
                         <span>Launches</span>
