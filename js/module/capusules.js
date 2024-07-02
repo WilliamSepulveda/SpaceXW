@@ -146,7 +146,7 @@ export const capsulesmaquetacion = async (index = 0) => {
                         <span>Capsules</span>
                     </a>
                 </li>
-                <li id="rocket" onclick="crews()">
+               <li id="rocket" onclick="botoncrews()">
                     <a class="select" href="#">
                         <img src="storage/image/tripulacion.png">
                         <span>Crews</span>

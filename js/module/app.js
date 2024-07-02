@@ -83,7 +83,8 @@ export const equipo = async () => {
     const options = {
         method: 'GET'
     };
-    let data = await fetch(url, options);
-    let res = await data.json(); 
-    return res;
+
+    let response = await fetch(url, options);
+    let data = await response.json();
+    return data;
 };
