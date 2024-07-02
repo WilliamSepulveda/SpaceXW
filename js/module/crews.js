@@ -33,7 +33,7 @@ function setMenuCapsule(index) {
 
 export const crewsmaquetacion = async (index = 0) => {
     let crews = await equipo(); 
-    let crew = crews[index]; 
+    let crew = crews[index]; // Obtener la tripulación según el índice seleccionado
 
     let contenedor1 = document.querySelector("#mGS1");
     let contenedor2 = document.querySelector("#mGS2");
@@ -116,12 +116,48 @@ export const crewsmaquetacion = async (index = 0) => {
                 <div class="mGS2SGGridSection">
                     <div class="contenedorimg_dad">
                         <div id="contenedorImagenes" class="contenedorimg_son">
-                           <img referrerpolicy="no-referrer" src="${image}"></img>
+                            <img referrerpolicy="no-referrer" src="${image}"></img>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>`;
+            <div class="mGS2Section">
+        <div class="footer_dad">
+            <div class="footer_son">
+                <li id="rocket" onclick="rockets()">
+                    <a class="select" href="#">
+                        <img src="storage/image/cohete.png">
+                        <span>Rockets</span>
+                    </a>
+                </li>
+                <li id="rocket" onclick="capsules()">
+                    <a class="select" href="#">
+                        <img src="storage/image/capsula-espacial.png">
+                        <span>Capsules</span>
+                    </a>
+                </li>
+               <li id="rocket" onclick="botoncrews()">
+                    <a class="select" href="#">
+                        <img src="storage/image/tripulacion.png">
+                                <span>Crews</span>
+                    </a>
+                </li>
+                <li id="rocket">
+                    <a class="select" href="#">
+                        <img src="storage/image/spaceship-26556_1280.png">
+                        <span>Launches</span>
+                    </a>
+                </li>
+                <li id="rocket">
+                    <a class="select" href="#">
+                        <img src="storage/image/almuerzo-cohete.svg">
+                        <span>Rockets</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+        
+        `;
 
     contenedor2.innerHTML = plantilla2;
 
