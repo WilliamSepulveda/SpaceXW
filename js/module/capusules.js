@@ -167,11 +167,24 @@ export const capsulesmaquetacion = async (index = 0) => {
                     </a>
                 </li>
                 <li id="rocket" onclick="company()">
+                    <a class="select" href="#">
+                        <img src="storage/image/office-building_4300059.png">
+                        <span>Company</span>
+                    </a>
+                </li>
+                   <li id="rocket" onclick="Ships()">
+                        <a class="select" href="#">
+                            <img src="storage/image/logistics_997566.png">
+                            <span>Ships</span>
+                        </a>
+                        </li>
+                        <li id="rocket" onclick="Landpads()">
                             <a class="select" href="#">
-                                <img src="storage/image/office-building_4300059.png">
-                                <span>Company</span>
+                                <img src="storage/image/map_3702101.png">
+                                <span>landingpad</span>
                             </a>
                         </li>
+                    </div>
             </div>
         </div>
     </div>`;

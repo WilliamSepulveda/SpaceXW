@@ -49,6 +49,6 @@ document.dragons = dragons;
 
 const company = async () => {
     await Companymaquetacion();
-    alert("estas dentro men ")
+    
 };
 document.company = company;

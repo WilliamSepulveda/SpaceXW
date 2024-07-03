@@ -165,7 +165,7 @@ body::-webkit-scrollbar-thumb{
     width: 66.5vw;
     height: 13vh;
     justify-content: center;
-    gap: 50px;
+    gap: 5px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
