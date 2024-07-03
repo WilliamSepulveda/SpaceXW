@@ -123,3 +123,15 @@ export const buques = async () => {
     let data = await response.json();
     return data;
 };
+
+
+export const terrenos = async () => {
+    const url = "https://api.spacexdata.com/v4/landpads";
+    const options = {
+        method: 'GET'
+    };
+
+    let response = await fetch(url, options);
+    let data = await response.json();
+    return data;
+};
