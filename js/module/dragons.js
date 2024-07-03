@@ -273,6 +273,12 @@ export const Dragonsmaquetacion = async (index = 0) => {
                     <span>Dragons</span>
                 </a>
             </li>
+            <li id="rocket" onclick="company()">
+                            <a class="select" href="#">
+                                <img src="storage/image/office-building_4300059.png">
+                                <span>Company</span>
+                            </a>
+                        </li>
         </div>
     </div>
 </div>`;

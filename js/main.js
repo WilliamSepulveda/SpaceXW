@@ -4,6 +4,7 @@ import { Capsulesmenu } from "./module/capusules.js";
 import { crewsmaquetacion } from "./module/crews.js";
 import { launchesmaquetacion } from "./module/launches.js";
 import { Dragonsmaquetacion } from "./module/dragons.js";
+import { Companymaquetacion } from "./module/company.js";
 
 Capsulesmenu();
 (async () => {
@@ -43,6 +44,11 @@ document.launches = launches;
 
 const dragons = async () => {
     await Dragonsmaquetacion();
-    alert("estas dentro men ")
 };
 document.dragons = dragons;
+
+const company = async () => {
+    await Companymaquetacion();
+    alert("estas dentro men ")
+};
+document.company = company;

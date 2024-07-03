@@ -101,3 +101,14 @@ export const dragons = async () => {
     let data = await response.json();
     return data;
 };
+
+export const empresa = async () => {
+    const url = "https://api.spacexdata.com/v4/company";
+    const options = {
+        method: 'GET'
+    };
+
+    let response = await fetch(url, options);
+    let data = await response.json();
+    return data;
+};
