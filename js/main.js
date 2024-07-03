@@ -5,6 +5,7 @@ import { crewsmaquetacion } from "./module/crews.js";
 import { launchesmaquetacion } from "./module/launches.js";
 import { Dragonsmaquetacion } from "./module/dragons.js";
 import { Companymaquetacion } from "./module/company.js";
+import { shipsMaquetacion } from "./module/ships.js";
 
 Capsulesmenu();
 (async () => {
@@ -52,3 +53,9 @@ const company = async () => {
     
 };
 document.company = company;
+
+const Ships = async () => {
+    await shipsMaquetacion();
+    alert("entro")
+};
+document.Ships = Ships;

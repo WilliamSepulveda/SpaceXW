@@ -112,3 +112,14 @@ export const empresa = async () => {
     let data = await response.json();
     return data;
 };
+
+export const buques = async () => {
+    const url = "https://api.spacexdata.com/v4/ships";
+    const options = {
+        method: 'GET'
+    };
+
+    let response = await fetch(url, options);
+    let data = await response.json();
+    return data;
+};
