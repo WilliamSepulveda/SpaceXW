@@ -220,18 +220,24 @@ export const Companymaquetacion = async () => {
                         <span>Company</span>
                     </a>
                 </li>
-                   <li id="rocket" onclick="Ships()">
-                        <a class="select" href="#">
-                            <img src="storage/image/logistics_997566.png">
-                            <span>Ships</span>
-                        </a>
-                        </li>
-                        <li id="rocket" onclick="Landpads()">
-                            <a class="select" href="#">
-                                <img src="storage/image/map_3702101.png">
-                                <span>landingpad</span>
-                            </a>
-                        </li>
+                <li id="rocket" onclick="Ships()">
+                    <a class="select" href="#">
+                        <img src="storage/image/logistics_997566.png">
+                        <span>Ships</span>
+                    </a>
+                </li>
+                <li id="rocket" onclick="Landpads()">
+                     <a class="select" href="#">
+                        <img src="storage/image/map_3702101.png">
+                        <span>landingpad</span>
+                    </a>
+                </li>
+                <li id="rocket" onclick="roadster()">
+                    <a class="select" href="#">
+                        <img src="storage/image/racing_1973901.png">
+                        <span>roadster</span>
+                    </a>
+                </li>
             </div>
         </div>
     </div>`;

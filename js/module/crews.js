@@ -172,6 +172,12 @@ export const crewsmaquetacion = async (index = 0) => {
                                 <span>landingpad</span>
                             </a>
                         </li>
+                         <li id="rocket" onclick="roadster()">
+                            <a class="select" href="#">
+                                <img src="storage/image/racing_1973901.png">
+                                <span>roadster</span>
+                            </a>
+                        </li>
             </div>
         </div>
         
