@@ -337,9 +337,15 @@ body::-webkit-scrollbar-thumb{
     width: 25px;
 }
 .conttexto p {
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: "roboto-mono";
-    font-size: 12px;
+    font-size: 19px;
+}
+
+.conttexto h4 {
+    color: rgb(225, 244, 12);
+    font-family: "roboto-mono";
+    font-size: 19px;
 }
 #launch h1{
     font-size: 22px;

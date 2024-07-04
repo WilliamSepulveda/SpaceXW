@@ -135,3 +135,17 @@ export const terrenos = async () => {
     let data = await response.json();
     return data;
 };
+
+
+
+
+export const auto = async () => {
+    const url = "https://api.spacexdata.com/v4/roadster";
+    const options = {
+        method: 'GET'
+    };
+
+    let response = await fetch(url, options);
+    let data = await response.json();
+    return data;
+};
