@@ -30,28 +30,16 @@ body::-webkit-scrollbar-thumb{
     grid-template-rows: 1;
 }
 
-.mainGridSection{
-    border: 1px solid green;
-}
-
-
 #mGS1{
     display: grid;
     grid-template-rows: 12% 88%;
     grid-template-columns: 1;
 }
-.mGS1Section{
-    border: 1px solid pink;
-}
-
 
 #mGS3{
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: 12% 74% 14%;
-}
-.mGS3Section{
-    border: 1px solid pink;
 }
 
 
@@ -60,9 +48,7 @@ body::-webkit-scrollbar-thumb{
     grid-template-columns: 1;
     grid-template-rows: 12% 20% 54% 14%;
 }
-.mGS2Section{
-    border: 1px solid pink;
-}
+
 .container {
     position: relative;
     display: flex;
@@ -149,8 +135,8 @@ body::-webkit-scrollbar-thumb{
     background-position: 100% 0;
     animation: load 4s infinite;
     width: 100%;
-    margin: 10px 0;
-    height: 85%;
+    margin: 5px 0;
+    height: 92%;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
@@ -163,7 +149,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     background: rgba(43, 66, 100, 0.348);
     width: 66.5vw;
-    height: 13vh;
+    height: 11vh;
     justify-content: center;
     gap: 5px;
     border-top-left-radius: 50px;
@@ -198,9 +184,7 @@ body::-webkit-scrollbar-thumb{
     grid-template-rows: 1;
     grid-template-columns: repeat(3, 1fr);
 }
-.mGS2SGGridSection{
-    border: 1px solid pink;
-}
+
 .information_rocket{
     padding: 8px;
     width: 100%;
@@ -377,27 +361,29 @@ body::-webkit-scrollbar-thumb{
     position: relative;
     display: flex;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-left: 5px;
 }
 .Data_son p{
     color:white;
     font-family: "roboto-mono";
-    margin-left: 3px;
+    margin-left: 8px;
 }
 .Data_nieto{
     background: rgba(147, 114, 25, 0.356);
     width:60%;
     height: 60px;
+    margin-left: 3px;
 }
 .Data_nieto2{
     background: rgba(147, 114, 25, 0.356);
-    width: 40%;
+    width: 35%;
+    height: 60px;
 } 
 .containerbarra{
     margin-top: 15px;
    position: relative;
    width: 200px;
-   /* background: red; */
    padding: 20 0px;
    border-radius: 5px;
    margin-left: 5px;
@@ -407,10 +393,10 @@ body::-webkit-scrollbar-thumb{
     margin-top: 5px;
     background: rgba(62, 69, 61, 0.71);
     width: 80%;
-    height: 5px;
+    height: 4px;
     border-radius: 6px;
     overflow: hidden;
-    margin: 5 0px;
+    margin: 4 0px;
 }
 
 .containerbarra .progress::before{
@@ -435,7 +421,7 @@ body::-webkit-scrollbar-thumb{
     overflow-x: scroll;
     height: 70%;
     margin-top: 20%;    
-    width: 100%;
+    width: 90%;
 }
 .contenedorimg_son img{
     width: 800px;

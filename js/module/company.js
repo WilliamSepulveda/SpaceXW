@@ -26,7 +26,6 @@ export const Companymaquetacion = async () => {
     let coo = company.coo;
     let cto_propulsion = company.cto_propulsion;
     let valuation = company.valuation;
-    let summary = company.summary;
 
     //------------------------------------------links----------------------------//
     let website = company.links.website || "No disponible";
@@ -86,8 +85,6 @@ export const Companymaquetacion = async () => {
                 </div>
                 <div class="conttexto">
                 <h2>sumary</h2>
-                <p>↓</p>
-                <p>${summary}</p>
             </div>
         </div>
         `;
